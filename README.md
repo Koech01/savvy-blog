@@ -1,12 +1,14 @@
-# Veg-Connect Setup Guide
-A data-driven React-Django app that fetches plant data from OpenFarm’s API, allowing users to schedule and share farming tasks in topic-specific communities while accessing plant growth insights and growing tips through features like bar graphs. Additionally, it incorporates a robust real-time chat system utilizing WebSocket technology for instantaneous communication and seamless collaboration among community members.
+# Savvy Blog Setup Guide
+Built with React and Django, this app uses APScheduler and BeautifulSoup4 to schedule web scraping from blog sites like LiveScience. It then curates blogs based on user-selected topics to deliver a seamless, personalized reading experience.
+ 
+# Ethical and Sustainable Web Scraping
+The web scraping process incorporates throttling to ensure ethical data extraction. Throttling minimizes the load on target websites, preventing performance issues and reducing the risk of being blocked. 
 
 # Table of Contents
     - Prerequisites.
     - Installation.
     - Environment Setup.
     - Frontend Setup.
-    - Database Migrations.
     - Running the Application. 
     - License. 
 
@@ -16,15 +18,14 @@ Before you begin, ensure you have the following installed:
 - [Python](https://www.python.org/downloads/) (3.x)
 - [Node.js](https://nodejs.org/en/download)
 - [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html)
-- [Docker](https://docs.docker.com/engine/install/)
 
 # Installation
 Clone the repository and set up your virtual environment:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Koech01/veg-connect.git
-virtualenv veg-connect/
+git clone https://github.com/Koech01/savvy-blog.git
+virtualenv savvy-blog/
 cd veg-connect
 ```
 
@@ -63,23 +64,9 @@ npm run build
 cd ..
 ```
 
-# Database Migrations.
-
-1. Run Django migrations:
-```bash
-python manage.py makemigrations
-python manage.py migrate 
-``` 
-
 # Running the Application.
 
-1. For chat functionality, ensure Redis is running:
-```bash
-sudo docker run -d -p 6379:6379 redis 
-```
-Enter your password.
-
-2. Start the Django development server:
+1. Start the Django development server:
 ```bash
 python manage.py runserver 
 ```
