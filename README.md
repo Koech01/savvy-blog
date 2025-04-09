@@ -26,7 +26,7 @@ Clone the repository and set up your virtual environment:
 ```bash
 git clone https://github.com/Koech01/savvy-blog.git
 virtualenv savvy-blog/
-cd veg-connect
+cd savvy-blog
 ```
 
 2. Install dependencies:

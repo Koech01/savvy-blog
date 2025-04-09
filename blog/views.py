@@ -140,18 +140,18 @@ class ProfileBlogsView(APIView):
     def get(self, request):
         profile = Profile.objects.get(username=request.user)
         
-        # scheduler = BackgroundScheduler()
+        scheduler = BackgroundScheduler()
 
-        # if Blog.objects.exists():
-        #     intervalSeconds = 10
-        # else:
-        #     intervalSeconds = 5
+        if Blog.objects.exists():
+            intervalSeconds = 10
+        else:
+            intervalSeconds = 5
 
-        # scheduler.add_job(
-        #     jobWrapper, 'interval', args=[request], seconds=intervalSeconds, next_run_time=datetime.now()
-        # )
-        # scheduler.start() 
-        # profileBlogMail(request)
+        scheduler.add_job(
+            jobWrapper, 'interval', args=[request], seconds=intervalSeconds, next_run_time=datetime.now()
+        )
+        scheduler.start() 
+        profileBlogMail(request)
          
         profile       = Profile.objects.get(username=request.user)
         profileTopics = Topic.objects.filter(users=profile)
