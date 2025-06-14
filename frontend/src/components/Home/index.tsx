@@ -7,17 +7,19 @@ import userIcon from '../assets/user.svg';
 import blogIcon from '../assets/blog.svg';
 import css from '../Home/index.module.css';
 import { useEffect, useState } from 'react';
-import { ProfileProps } from '../types/index';
+import { useAuth } from '../Auth/authContext'; 
 import { useNavigate } from 'react-router-dom';
 import settingIcon from '../assets/setting.svg';
 import AddDarkIcon from '../assets/addDark.svg';
 import blogDarkIcon from '../assets/blogDark.svg';
 import userDarkIcon from '../assets/userDark.svg';
+import { type ProfileProps } from '../types/index'; 
 import settingDarkIcon from '../assets/settingDark.svg';
 
 
 const Home = () => {
-  
+      
+  const { accessToken }                       = useAuth();
   const navigate                              = useNavigate();
   const [username, setUsername]               = useState('');
   const [activeContent, setActiveContent]     = useState('blog'); 
@@ -37,11 +39,10 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/home/', {
+      try { 
+        const response = await fetch('/api/v1/home/', {
           method      : 'GET',
-          headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
   

@@ -1,12 +1,14 @@
 import checkIcon from '../assets/check.svg';
-import css from '../Profile/index.module.css';
-import { ProfileProps } from '../types/index';
+import css from '../Profile/index.module.css'; 
+import { useAuth } from '../Auth/authContext'; 
+import { type ProfileProps } from '../types/index';
 import checkDarkIcon from '../assets/checkDark.svg';
 import React, { useEffect, useRef, useState } from 'react';
 
 
 const Profile: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
 
+  const { accessToken }                               = useAuth();
   const [shakeUsername, setShakeUsername]             = useState(false);
   const [usernamePlaceholder, setUsernamePlaceholder] = useState('Username');
   const [shakeEmail, setShakeEmail]                   = useState(false);
@@ -71,21 +73,19 @@ const Profile: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
       formData.append('profileIcon', selectedProfileIcon);
     }
   
-    try {
-      const token    = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/api/v1/user/details/', {
+    try { 
+      const response = await fetch('/api/v1/user/details/', {
         method      : 'PATCH',
-        headers     : { 'Authorization': `Bearer ${token}` },
+        headers     : { Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
         body        : formData,
       });
       
       if (response.ok) {
-
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/home/', {
+ 
+        const response = await fetch('/api/v1/home/', {
           method      : 'GET',
-          headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -99,7 +99,9 @@ const Profile: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
 
         initialProfileRef.current = updatedProfile;
 
-      } else {
+      } 
+      
+      else {
 
         try {
           const errorResponse = await response.json();
@@ -160,7 +162,7 @@ const Profile: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
     }
   }, [showSucessMsg]);
 
-  
+
   return (
     <div className={`${css.profileContainer} ${profile.displayTheme === 'dark' ? css.darkTheme : css.lightTheme}`}>
 

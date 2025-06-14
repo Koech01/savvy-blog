@@ -20,19 +20,18 @@ from .auth import generateAccessToken, generateRefreshToken, JWTAuthentication
 
 
 def compress(image):
-    userImage   = Image.open(image)
-    imageIO     = BytesIO()
+    userImage = Image.open(image)
+    imageIO   = BytesIO()
     imageFormat = userImage.format if userImage.format else 'JPEG'  
     userImage.save(imageIO, imageFormat, quality=60)
     newImage = File(imageIO, name=image.name)
     return newImage
 
 
-
 class SignUpView(APIView):
     def post(self, request):
         profileData = request.data.copy()
-        profileIcon = profileData.pop('profileIcon', None)
+        profileIcon = request.FILES.get('profileIcon')
         serializer  = ProfileSerializer(data=profileData)
         serializer.is_valid(raise_exception=True)
         profile = serializer.save()
@@ -110,7 +109,7 @@ class RefreshApiView(APIView):
         accessToken = generateAccessToken(payload)
 
         return Response({ 'accessToken' : accessToken })
-
+ 
 
 class ProfileUpdateView(APIView):
     authentication_classes = [JWTAuthentication]
@@ -142,7 +141,11 @@ class ProfileUpdateView(APIView):
             profile.profileIcon = compressedImage
         profile.save()
 
-        return Response(status=status.HTTP_200_OK)
+        try: 
+            serializer = ProfileSerializer(profile)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Exception as e:
+            return Response({'error' : str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class ProfileThemeView(APIView):

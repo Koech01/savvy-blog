@@ -1,6 +1,7 @@
 from django.db import models
 from profiles.models import Profile
 
+
 class TopicCategory(models.Model):
     name = models.CharField(max_length=50)
 

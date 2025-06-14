@@ -1,11 +1,13 @@
 import css from '../Auth/index.module.css';
+import { useAuth } from '../Auth/authContext';
 import { useNavigate } from 'react-router-dom';
 import infoCircledIcon from '../assets/infoCircled.svg';
-import { SyntheticEvent, useState, useEffect } from 'react';
+import { type SyntheticEvent, useState, useEffect } from 'react';
 
 
 const Signup = () => {
 
+  const { setAccessToken }        = useAuth();
   const navigate                  = useNavigate();
   const [username, setUsername]   = useState('');
   const [email, setEmail]         = useState('');
@@ -36,7 +38,7 @@ const Signup = () => {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/signup/', {
+      const response = await fetch('/api/v1/signup/', {
         method      : 'POST',
         headers     : { 'Content-Type': 'application/json' },
         credentials : 'include',
@@ -44,9 +46,8 @@ const Signup = () => {
       });
   
       if (response.ok) { 
-        const data  = await response.json();
-        const token = data.token;
-        localStorage.setItem('token', token);
+        const data = await response.json();
+        setAccessToken(data.token);
         localStorage.setItem('themePreference', 'light');
         setRedirects(true); 
       } 

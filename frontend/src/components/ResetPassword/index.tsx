@@ -1,12 +1,13 @@
 import css from '../Auth/index.module.css';
+import { useAuth } from '../Auth/authContext'; 
+import { useNavigate } from 'react-router-dom';
 import infoCircledIcon from '../assets/infoCircled.svg';
-import { useNavigate, useParams } from 'react-router-dom';
-import { SyntheticEvent, useState, useEffect } from 'react';
+import { type SyntheticEvent, useState, useEffect } from 'react';
 
 
 const ResetPassword = () => {
 
-  const {token}                       = useParams();
+  const { setAccessToken }            = useAuth();
   const navigate                      = useNavigate();
   const [password, setPassword]       = useState('');
   const [confirmPass, setConfirmPass] = useState('');
@@ -26,18 +27,17 @@ const ResetPassword = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/reset/', {
+      const response = await fetch('/api/v1/reset/', {
         method      : 'POST',
         headers     : { 'Content-Type': 'application/json' },
         credentials : 'include',
-        body        : JSON.stringify({ token, password, confirmPass }),
+        body        : JSON.stringify({ password, confirmPass }),
       });
   
       if (response.ok) {
 
-        const data  = await response.json();
-        const token = data.token;
-        localStorage.setItem('token', token);
+        const data = await response.json();
+        setAccessToken(data.token);
         setRedirects(true); 
 
       } else {

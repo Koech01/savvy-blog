@@ -1,7 +1,7 @@
 import css from '../Auth/index.module.css';
 import { useNavigate } from 'react-router-dom';
 import infoCircledIcon from '../assets/infoCircled.svg';
-import { SyntheticEvent, useState, useEffect } from 'react';
+import { type SyntheticEvent, useState, useEffect } from 'react';
 
 
 const ForgotPassword = () => {
@@ -36,7 +36,7 @@ const ForgotPassword = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/forgot/', {
+      const response = await fetch('/api/v1/forgot/', {
         method      : 'POST',
         headers     : { 'Content-Type': 'application/json' },
         credentials : 'include',

@@ -19,7 +19,10 @@ class JWTAuthentication(BaseAuthentication):
             except jwt.DecodeError:
                 raise AuthenticationFailed('Invalid token')
             
-            profile = Profile.objects.get(id=payload.get('id'))
+            try:
+                profile = Profile.objects.get(id=payload.get('id'))
+            except Profile.DoesNotExist:
+                raise AuthenticationFailed('User profile not found')
             return (profile, None)
         
         raise AuthenticationFailed('Profile Unauthenticated')

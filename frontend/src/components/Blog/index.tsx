@@ -1,14 +1,15 @@
 import linkIcon from '../assets/link.svg';
 import css from '../Blog/index.module.css';
 import heartIcon from '../assets/heart.svg';
-import { ProfileProps } from '../types/index';
+import { useAuth } from '../Auth/authContext';  
 import linkDarkIcon from '../assets/linkDark.svg';
+import { type ProfileProps } from '../types/index';
 import heartDarkIcon from '../assets/heartDark.svg';
 import heartFilledIcon from '../assets/heartfilled.svg';
 import blogDarkInfoIcon from '../assets/blogDarkInfoIcon.svg';
 import blogLightInfoIcon from '../assets/blogLightInfoIcon.svg';
 import heartFilledDarkIcon from '../assets/heartfilledDark.svg';
-import React, { useEffect, useState, SVGProps, useRef } from 'react';
+import React, { useEffect, useState, type SVGProps, useRef } from 'react';
 
 
 interface BlogObj {
@@ -39,7 +40,7 @@ const FadeInSection: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 };
 
 
-const SVGComponent: React.FC<SVGProps<SVGSVGElement>> = ({ className }) => (
+const SVGComponent: React.FC<SVGProps<SVGSVGElement>> = ({ }) => (
   <svg
     className           = {css.loaderParent}
     x                   = "0px" 
@@ -70,6 +71,7 @@ const SVGComponent: React.FC<SVGProps<SVGSVGElement>> = ({ className }) => (
 
 const Blog: React.FC<ProfileProps> = ({ profile }) => {
   
+  const { accessToken }                          = useAuth();
   const [profileBlogContent, setProfBlogContent] = useState<BlogObj[]>([]);
   const [blogContent, setBlogContent]            = useState<BlogObj[]>([]);
   const [bookmarkBlogs, setBookmarkBlogs]        = useState<BlogObj[]>([]);
@@ -85,11 +87,10 @@ const Blog: React.FC<ProfileProps> = ({ profile }) => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/explore/blogs/', {
+      try { 
+        const response = await fetch('/api/v1/explore/blogs/', {
           method      : 'GET',
-          headers     :  { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     :  { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -106,11 +107,10 @@ const Blog: React.FC<ProfileProps> = ({ profile }) => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/user/blogs/', {
+      try { 
+        const response = await fetch('/api/v1/user/blogs/', {
           method      : 'GET',
-          headers     :  { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     :  { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -127,11 +127,10 @@ const Blog: React.FC<ProfileProps> = ({ profile }) => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/user/bookmarks/', {
+      try { 
+        const response = await fetch('/api/v1/user/bookmarks/', {
           method      : 'GET',
-          headers     :  { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -147,11 +146,10 @@ const Blog: React.FC<ProfileProps> = ({ profile }) => {
 
 
   const handleBookmarkToggle = async (blogId: number) => {
-    try {
-      const token = localStorage.getItem('token');
-      const response = await fetch(`http://127.0.0.1:8000/api/v1/blog/${blogId}/bookmark/`, {
+    try { 
+      const response = await fetch(`/api/v1/blog/${blogId}/bookmark/`, {
         method      : 'POST',
-        headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
       });
 
@@ -180,11 +178,10 @@ const Blog: React.FC<ProfileProps> = ({ profile }) => {
 
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/user/bookmarks/', {
+      try { 
+        const response = await fetch('/api/v1/user/bookmarks/', {
           method      : 'GET',
-          headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
   

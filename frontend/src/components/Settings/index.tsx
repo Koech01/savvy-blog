@@ -1,11 +1,13 @@
-import { ProfileProps } from '../types/index';
+import { useAuth } from '../Auth/authContext'; 
 import { useNavigate } from 'react-router-dom';
 import css from '../Settings/index.module.css';
+import { type ProfileProps } from '../types/index';
 import React, { useEffect, useState } from 'react';
 
 
 const Settings: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
 
+  const { accessToken }                        = useAuth();
   const navigate                               = useNavigate();
   const [getMails, setGetMails]                = useState(profile.receiveMails || false);
   const [getUserFavourites, setUserFavourites] = useState(profile.favourites || false);
@@ -16,11 +18,10 @@ const Settings: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
     const newTheme = profile.displayTheme === 'light' ? 'dark' : 'light';
     localStorage.setItem('themePreference', newTheme);
 
-    try {
-      const token    = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/api/v1/user/theme/', {
+    try { 
+      const response = await fetch('/api/v1/user/theme/', {
         method      : 'PATCH',
-        headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
         body        : JSON.stringify({ theme: newTheme }),
       });
@@ -39,11 +40,10 @@ const Settings: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
     const newReceiveMails = !getMails;
     setGetMails(newReceiveMails);
 
-    try {
-      const token    = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/api/v1/user/mail/preferences/', {
+    try { 
+      const response = await fetch('/api/v1/user/mail/preferences/', {
         method      : 'PATCH',
-        headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
         body        : JSON.stringify({ receiveMails: newReceiveMails }),
       });
@@ -65,11 +65,10 @@ const Settings: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
     const newUserFavourites = !getUserFavourites;
     setUserFavourites(newUserFavourites);
 
-    try {
-      const token    = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/api/v1/user/bookmarks/visibility/', {
+    try { 
+      const response = await fetch('/api/v1/user/bookmarks/visibility/', {
         method      : 'PATCH',
-        headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
         body        : JSON.stringify({ favourites: newUserFavourites }),
       });
@@ -89,7 +88,7 @@ const Settings: React.FC<ProfileProps> = ({ profile, updateProfile }) => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/v1/logout/', {
+      const response = await fetch('/api/v1/logout/', {
         method      : 'POST',
         headers     : { 'Content-Type': 'application/json' },
         credentials : 'include',

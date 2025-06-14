@@ -4,7 +4,7 @@ from .views import RemoveProfileTopicsView, AddProfileTopicsView, ProfileBlogsVi
 from .views import BookmarkBlogView, BookmarksView
 
 urlpatterns = [
-    path('v1/home/', HomeView.as_view()),
+    path('v1/home/'  , HomeView.as_view()),
     path('v1/topics/user/add/', TopicCategoriesView.as_view(), name='topicCategoriesView'),
     path('v1/topics/', TopicsByCategoryView.as_view(), name='topicsByCategory'),
     path('v1/topics/list/', TopicsByProfileView.as_view(), name='topicsByProfileView'),

@@ -1,6 +1,7 @@
 import css from '../Add/index.module.css';
 import checkIcon from '../assets/check.svg';
-import { ProfileProps } from '../types/index';
+import { useAuth } from '../Auth/authContext'; 
+import { type ProfileProps } from '../types/index';
 import { useState, useEffect, useRef } from 'react';
 import checkDarkIcon from '../assets/checkDark.svg';
 
@@ -19,6 +20,7 @@ interface Topic {
 
 const Add: React.FC<ProfileProps> = ({ profile }) => {
   
+  const { accessToken }                                   = useAuth();
   const [topicCategories, setTopicCategories]             = useState<TopicCategory[]>([]);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<number | null>(null);
   const [topicsForCategory, setTopicsForCategory]         = useState<Topic[]>([]);
@@ -35,11 +37,10 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
 
   useEffect(() => {
     const fetchTopicCategories = async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/topics/user/add/', {
+      try { 
+        const response = await fetch('/api/v1/topics/user/add/', {
           method      : 'POST',
-          headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -58,12 +59,11 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
     if (selectedCategoryIndex !== null) {
       const selectedCategory = topicCategories[selectedCategoryIndex];
       const fetchTopicsForCategory = async () => {
-        try {
-          const token               = localStorage.getItem('token');
+        try { 
           const encodedCategoryName = encodeURIComponent(selectedCategory.name);
-          const response = await fetch(`http://127.0.0.1:8000/api/v1/topics/?category=${encodedCategoryName}`, {
+          const response = await fetch(`/api/v1/topics/?category=${encodedCategoryName}`, {
             method      : 'POST',
-            headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
             credentials : 'include',
             body        : JSON.stringify({})
           });
@@ -95,11 +95,10 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
   
   useEffect(() => {
     (async () => {
-      try {
-        const token    = localStorage.getItem('token');
-        const response = await fetch('http://127.0.0.1:8000/api/v1/topics/list/', {
+      try { 
+        const response = await fetch('/api/v1/topics/list/', {
           method      : 'GET',
-          headers     :  { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
 
@@ -116,11 +115,10 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
 
 
   const handleTopicsSubmit = async () => {
-    try {
-      const token    = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/api/v1/topics/add/', {
+    try { 
+      const response = await fetch('/api/v1/topics/add/', {
         method      : 'PATCH',
-        headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         body        : JSON.stringify({ selectedTopics }),
         credentials : 'include',
       });
@@ -130,9 +128,9 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
         setSelectedTopics({}); 
         setshowSuccessTopicAdd(true);
 
-        const topicsResponse = await fetch('http://127.0.0.1:8000/api/v1/topics/list/', {
+        const topicsResponse = await fetch('/api/v1/topics/list/', {
           method      : 'GET',
-          headers     : { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
           credentials : 'include',
         });
         
@@ -147,12 +145,11 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
 
 
   const handleUpdateTopics = async () => {
-    try {
-      const token             = localStorage.getItem('token');
+    try { 
       const selectedTopicsIds = Object.keys(selectedTopicIds).filter(id => selectedTopicIds[parseInt(id)]);
-      const response = await fetch('http://127.0.0.1:8000/api/v1/topics/remove/', {
+      const response = await fetch('/api/v1/topics/remove/', {
         method      : 'PATCH',
-        headers     :  { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
         credentials : 'include',
         body        : JSON.stringify({ selectedTopics: selectedTopicsIds }),
       });
