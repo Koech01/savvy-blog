@@ -87,7 +87,7 @@ const Login = () => {
 
 
   useEffect(() => {
-    const timer = setTimeout(() => { setGuestBoard(true); }, 2000); 
+    const timer = setTimeout(() => { setGuestBoard(true); }, 500); 
     return () => clearTimeout(timer);  
   }, []);
 
