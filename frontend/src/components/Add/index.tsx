@@ -62,7 +62,7 @@ const Add: React.FC<ProfileProps> = ({ profile }) => {
         try { 
           const encodedCategoryName = encodeURIComponent(selectedCategory.name);
           const response = await fetch(`/api/v1/topics/?category=${encodedCategoryName}`, {
-            method      : 'POST',
+            method      : 'GET',
             headers     : { 'Content-Type': 'application/json', Authorization: `Bearer ${accessToken}` },
             credentials : 'include',
             body        : JSON.stringify({})
