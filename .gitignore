@@ -3,5 +3,4 @@ bin
 lib
 .env
 frontend/build
-media/ProfileIcons
 frontend/node_modules
