@@ -154,12 +154,12 @@ const Login = () => {
               </div> 
 
               <div className={`${css.authGuestAccItemDiv} ${css.authGuestAccHintTablet}`}> 
-                <p className={css.authGuestAccHint}>email &nbsp;—</p>
+                <p className={css.authGuestAccHint}>email &nbsp;</p>
                 <p className={css.authGuestAccText}>guest@savvyblog.com</p>
               </div>
 
               <div className={`${css.authGuestAccFlexEndDiv} ${css.authGuestAccHintTablet}`}>  
-                <p className={css.authGuestAccHint}>password &nbsp;—</p>
+                <p className={css.authGuestAccHint}>password &nbsp;</p>
                 <p className={css.authGuestAccText}>!justlooking@!</p>
               </div> 
             </div>
