@@ -1,0 +1,257 @@
+/* Smartphones and small tablets in portrait mode */
+@media screen and (max-width: 767px) {
+
+    .homeParentDiv { 
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .homeChildDiv {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border: none;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .homeContent { 
+        display: flex;
+        flex: 1;
+        width: 100%;
+        margin: 0px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex-direction: column; 
+        border-top: transparent; 
+        border-left: transparent; 
+        border-right: transparent; 
+    }
+
+    .lightTheme .homeContent { border-bottom: 1px solid #CFD8DC; }
+    .darkTheme .homeContent { border-bottom: 1px solid #2B2B2B; }
+
+    .homeSideDiv { display: none; }
+
+    .homeMobileTabBar{
+        display: flex;
+        width: 94%;
+        padding: 6px;
+        border: none;
+        border-radius: 20px;
+        align-items: center;
+        box-sizing: border-box; 
+        margin: 3px 0px 3px 0px;
+        background-color: transparent;
+    }
+
+    .lightTheme .homeMobileTabBar{ background-color: #FFFFFF; }
+    .darkTheme .homeMobileTabBar{ background-color: transparent; }
+    
+    .homeMobileTabBarLabel{
+        display: flex;
+        width: 25%;
+        padding: 6px;
+        cursor: pointer;
+        align-items: center;
+        border-radius: 20px;
+        flex-direction: column;
+    }
+    
+    .homeMobileTabBarLabel input { display: none; }
+    
+    .homeMobileTabBarLabel span { font-size: 14.5px; }
+
+    .lightTheme .homeMobileTabBarLabel span { color: #666666; }
+    .darkTheme .homeMobileTabBarLabel span { color: #8D9396; }
+
+    .homeMobileTabBarLabel.active span { font-size: 14.5px; }
+
+    .lightTheme .homeMobileTabBarLabel.active span { color: #000000; }
+    .darkTheme .homeMobileTabBarLabel.active span { color: #FDFDFD; }
+    
+    .lightTheme .homeMobileTabBarLabel.active { box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; }
+    .darkTheme .homeMobileTabBarLabel.active { background-color: #101312; }
+
+    .homeMobileTabBarLabel.active div{
+        width: 95%;
+        height: 2px;
+        margin: 4px 0px 0px 0px;
+    }
+
+}
+
+
+/* Smartphones and small tablets in landscape mode */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    .homeChildDiv {
+        width: 90%;
+        height: 90%;
+        border-radius: 0px;
+    }
+
+    .lightTheme .homeChildDiv { border: 1px solid #CFD8DC; }
+    .darkTheme .homeChildDiv { border: 1px solid #2B2B2B; }
+
+    .homeSideDiv {
+        width: 19%;
+        margin: 0px;
+        padding: 50px 0px 0px 0px;
+    } 
+
+    .lightTheme .homeSideDiv { border-right: 1px solid #CFD8DC; }
+    .darkTheme .homeSideDiv { border-right: 1px solid #2B2B2B; }
+
+    .homeContent {
+        width: 81%; 
+        height: 100%;
+    }
+
+    .homeMobileTabBar { display: none; }
+
+}
+
+
+/* Tablets and larger screens */
+@media screen and (min-width: 1024px) {
+
+    .homeChildDiv {
+        width: 90%;
+        height: 85%;
+        border-radius: 0px;
+    }
+
+    .lightTheme .homeChildDiv { border: 1px solid #CFD8DC; }
+    .darkTheme .homeChildDiv { border: 1px solid #2B2B2B; }
+
+    .homeSideDiv {
+        width: 15%;
+        margin: 0px;
+        padding: 50px 0px 0px 0px;
+    } 
+
+    .lightTheme .homeSideDiv { border-right: 1px solid #CFD8DC; }
+    .darkTheme .homeSideDiv { border-right: 1px solid #2B2B2B; }
+
+    .homeContent {
+        width: 85%; 
+        height: 100%;
+    }
+
+    .homeMobileTabBar { display: none; }
+
+}
+
+.homeParentDiv {
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    border: none;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightTheme .homeParentDiv { background-color: #FFFFFF; }
+.darkTheme .homeParentDiv { background-color: #151817; }
+
+.homeChildDiv {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.homeContent {
+    margin: 0px;
+    padding: 0px;
+}
+
+.homeSideBlog, .homeSideAdd, .homeSideProfile, .homeSideSettings {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-items: center;
+    padding: 5px 0px 5px 0px;
+    margin: 0px 15px 5px 5px;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transform: perspective(1px) translateZ(0);
+    -webkit-transform: perspective(1px) translateZ(0);
+}
+
+.lightTheme .homeSideBlog:hover,
+.lightTheme .homeSideBlog:focus,
+.lightTheme .homeSideBlog:active,
+.lightTheme .homeSideAdd:hover,
+.lightTheme .homeSideAdd:focus,
+.lightTheme .homeSideAdd:active,
+.lightTheme .homeSideProfile:hover,
+.lightTheme .homeSideProfile:focus,
+.lightTheme .homeSideProfile:active,
+.lightTheme .homeSideSettings:hover,
+.lightTheme .homeSideSettings:focus,
+.lightTheme .homeSideSettings:active { 
+    transform: translateX(8px);
+    background-color: #FAFAFA;
+    -webkit-transform: translateX(8px); 
+}
+
+.darkTheme .homeSideBlog:hover,
+.darkTheme .homeSideBlog:focus,
+.darkTheme .homeSideBlog:active,
+.darkTheme .homeSideAdd:hover,
+.darkTheme .homeSideAdd:focus,
+.darkTheme .homeSideAdd:active,
+.darkTheme .homeSideProfile:hover,
+.darkTheme .homeSideProfile:focus,
+.darkTheme .homeSideProfile:active,
+.darkTheme .homeSideSettings:hover,
+.darkTheme .homeSideSettings:focus,
+.darkTheme .homeSideSettings:active {
+    transform: translateX(8px);
+    background-color: #101312;
+    -webkit-transform: translateX(8px);
+}
+
+.homeSideDiv > div.active {
+    transform: translateX(8px);
+    -webkit-transform: translateX(8px);
+}
+
+.lightTheme .homeSideDiv > div.active { background-color: #FAFAFA; }
+
+.darkTheme .homeSideDiv > div.active { background-color: #101312; }
+
+.homeSideBlog > img, .homeSideAdd > img, .homeSideProfile > img, .homeSideSettings > img {
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    cursor: pointer;
+    margin: 0px 0px 0px 5px;
+}
+
+.homeSideBlog > p, .homeSideAdd > p, .homeSideProfile > p, .homeSideSettings > p {
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    font-style: normal;
+    margin: 0px 0px 0px 10px;
+}
+
+.lightTheme .homeSideBlog > p,
+.lightTheme .homeSideAdd > p,
+.lightTheme .homeSideProfile > p,
+.lightTheme .homeSideSettings > p { color: #212121; }
+
+.darkTheme .homeSideBlog > p,
+.darkTheme .homeSideAdd > p,
+.darkTheme .homeSideProfile > p,
+.darkTheme .homeSideSettings > p { color: #FDFDFD; }

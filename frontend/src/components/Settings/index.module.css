@@ -1,0 +1,322 @@
+/* Smartphones and small tablets in portrait mode */
+@media screen and (max-width: 480px) {
+
+    .settingsContainer {
+        display: flex;
+        flex: 1;
+        border: none;
+        flex-direction: column;
+    }
+
+    .settingsParentDiv {
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .settingsChildDiv {
+        width: 85%;
+        border: none;
+        padding: 0px;
+        flex-direction: column;
+    }
+
+    .settingsDisplayModeChild {
+        display: flex;
+        width: 100% !important;
+        flex-direction: column;
+        margin: 15px 0px 0px 0px; 
+    }
+
+    .settingsHeaderTitle { margin: 10px 0px 0px 0px; }
+
+    .settingsItemDiv { 
+        margin: 15px 0px 0px 0px; 
+        padding: 0px 0px 3px 0px; 
+    }
+
+    .settingsModeSwitch { margin: 0px 0px 0px 15px; }
+}
+
+
+/* Smartphones and small tablets in portrait mode */
+@media screen and (min-width: 481px) and (max-width: 767px){
+
+    .settingsParentDiv {
+        margin: 0px;
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0px 0px 0px;
+    }
+
+    .settingsChildDiv {
+        width: 90%;
+        align-items: center;
+        border-radius: 10px;
+        flex-direction: column;
+        padding: 10px 20px 20px 20px; 
+    }
+
+    .settingsHeaderTitle { margin: 10px 0px 0px 0px; }
+    
+    .settingsDisplayModeChild { margin: 10px 0px 0px 0px; }
+   
+    .settingsItemDiv { 
+        padding: 0px;
+        margin: 20px 0px 0px 0px; 
+    }
+
+    .settingsModeSwitch { margin: 0px 0px 0px 15px; }
+}
+
+
+/* Smartphones and small tablets in landscape mode */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .settingsParentDiv {
+        margin: 0px;
+        padding: 0px;
+        padding: 50px 0px 0px 30px;
+    }
+
+    .settingsChildDiv {
+        width: 85%;
+        border-radius: 10px;
+        flex-direction: column;
+        padding: 10px 20px 20px 20px; 
+    }
+
+    .settingsHeaderTitle { margin: 10px 0px 0px 0px; }
+    
+    .settingsDisplayModeChild { margin: 10px 0px 0px 0px; }
+
+    .settingsItemDiv { 
+        padding: 0px;
+        margin: 20px 0px 0px 0px; 
+    }
+
+    .settingsModeSwitch { margin: 0px 0px 0px 100px; }
+}
+
+
+/* Tablets and larger screens */
+@media screen and (min-width: 1024px) {
+
+    .settingsParentDiv {
+        margin: 0px;
+        padding: 0px;
+        padding: 50px 0px 0px 30px;
+    }
+
+    .settingsChildDiv {
+        width: 70%;
+        border-radius: 10px;
+        flex-direction: column;
+        padding: 10px 20px 20px 20px; 
+    }
+
+    .settingsHeaderTitle { margin: 10px 0px 0px 0px; }
+    
+    .settingsDisplayModeChild { margin: 10px 0px 0px 0px; }
+
+    .settingsItemDiv { 
+        padding: 0px;
+        margin: 20px 0px 0px 0px; 
+    }
+
+    .settingsModeSwitch { margin: 0px 0px 0px 100px; }
+}
+
+
+.settingsParentDiv {
+    display: flex;
+    height: 100%; 
+    flex-direction: column;
+}
+
+.settingsChildDiv {
+    display: flex;
+    margin: 0px;
+    height: fit-content;
+}
+
+.settingsHeaderTitle {
+    padding: 0px;
+    padding: 0px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 17px;
+    font-style: normal;
+}
+
+.lightTheme .settingsHeaderTitle { color: #171717; }
+.darkTheme .settingsHeaderTitle { color: #FDFDFD; }
+
+.settingsDisplayModeDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.settingsDisplayModeChild {
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+}
+
+.settingsItemDiv { display: flex; }
+
+.settingsItemTextDiv{
+    display: flex;
+    gap: 7px;
+    width: 100%;
+    padding: 0px;
+    flex-direction: column;
+}
+
+.settingsModeSwitchDiv{
+    display: flex;
+    width: 100%;
+    padding: 0px;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.settingsItemText{
+    margin: 0px;
+    padding: 0px;
+    padding: 0px;
+    font-weight: 500;
+    font-size: 14.5px;
+    font-style: normal;
+    line-height: 14.5px;
+    white-space: nowrap;
+}
+
+.settingsItemDesc{
+    margin: 0px;
+    padding: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.lightTheme .settingsItemText { color: #171717; }
+.darkTheme .settingsItemText { color: #8D9396; }
+
+.lightTheme .settingsItemDesc { color: #666666; }
+.darkTheme .settingsItemDesc { color: #707578; }
+
+.settingsModeSwitch {
+    width: 32px;
+    height: 17px;
+    position: relative;
+    display: inline-block;
+}
+
+.settingsModeSwitch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+.settingsModeSlider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.lightTheme .settingsModeSlider {     
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+}
+
+.darkTheme .settingsModeSlider {     
+    background-color: #0C0E0D;
+    border: 1px solid #151817; 
+}
+  
+.lightTheme .settingsModeSlider:before {
+    position: absolute;
+    content: "";
+    top: 1px;
+    left: 1px;
+    width: 13px;
+    height: 13px;
+    transition: 0.4s;
+    border-radius: 20px;
+    background-color: #E0E0E0;
+}
+
+.darkTheme .settingsModeSlider:before {
+    position: absolute;
+    content: "";
+    top: 1px;
+    left: 1px;
+    width: 13px;
+    height: 13px;
+    transition: 0.4s;
+    border-radius: 20px;
+    background-color: #2C2F2E;
+}
+
+.lightTheme .settingsModeSwitch input:checked + .settingsModeSlider {
+    background-color: #171717;
+    border: 1px solid #171717;
+}
+
+.darkTheme .settingsModeSwitch input:checked + .settingsModeSlider {
+    background-color: #0C0E0D;
+    border: 1px solid #151817;
+}
+
+.lightTheme .settingsModeSwitch input:focus + .settingsModeSlider { box-shadow: 0 0 1px #424242; }
+.darkTheme .settingsModeSwitch input:focus + .settingsModeSlider { box-shadow: 0 0 1px #1C1C1C; }
+
+.lightTheme .settingsModeSwitch input:checked + .settingsModeSlider:before {
+    background-color: #fff;
+    transform: translateX(15px);
+}
+
+.darkTheme .settingsModeSwitch input:checked + .settingsModeSlider:before {
+    background-color: #FDFDFD;
+    transform: translateX(15px);
+}
+
+.settingsLogoutBtn{
+    display: inline-block;
+    height: 28px;
+    outline: 0;
+    margin: 0px; 
+    border: none;
+    padding: 0 19px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: 400;
+    font-size: 13.5px;
+    border-radius: 4px;
+    font-style: normal;
+    width: fit-content;
+    line-height: 13.5px;
+}
+
+.settingsLogoutBtn:active { transform: scale(0.9); }
+
+.lightTheme .settingsLogoutBtn{
+    color: #FFFFFF;
+    background-color: #171717;
+}
+
+.darkTheme .settingsLogoutBtn{
+    color: #151817;
+    background-color: #FDFDFD; 
+}

@@ -1,0 +1,166 @@
+/* Smartphones and small tablets in portrait mode */
+@media screen and (max-width: 767px) {
+
+    .notFoundChildDiv {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .notFoundTextDiv {
+        margin: 0px;
+        padding: 0px;
+    } 
+
+    .notFoundText{
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .notFoundExploreBtn{
+        height: fit-content;
+        padding: 7px 30px;
+        margin: 25px 0px 0px 0px; 
+    }
+}
+  
+  
+/* Smartphones and small tablets in landscape mode */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+    .notFoundChildDiv {
+        width: 90%;
+        height: 90%;
+    }
+
+    .notFoundTextDiv {
+        margin: 0px;
+        padding: 0px;
+    } 
+
+    .notFoundText{
+        font-size: 23px;
+        line-height: 34px;
+    }
+
+    .notFoundExploreBtn{   
+        height: fit-content;
+        padding: 5px 25px;
+        margin: 15px 0px 0px 0px;
+    }
+}
+  
+  
+/* Tablets and larger screens */
+@media screen and (min-width: 1024px) {
+
+    .notFoundChildDiv {
+        width: 85%;
+        height: 85%;
+    }
+
+    .notFoundTextDiv{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .notFoundText{
+        font-size: 23px;
+        line-height: 34px;
+    }
+    
+    .notFoundExploreBtn{
+        height: fit-content;
+        padding: 5px 25px;
+        margin: 20px 0px 0px 0px;
+    }
+}
+  
+
+.notFoundParentDiv {
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    padding: 0px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightTheme .notFoundParentDiv { background-color: #FFFFFF; }
+.darkTheme .notFoundParentDiv { background-color: #151817; }
+
+.notFoundChildDiv {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notFoundTextDiv{ display: flex; }
+
+.notFoundText{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.lightTheme .notFoundText{ 
+    color: #333333;
+    background: linear-gradient(
+    to right, #333333, #5B5B5B 30%, #848484 50%, #ADADAD 70%, #D6D6D6 90%, #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.darkTheme .notFoundText{ 
+    color: #FFFFFF;
+    background: linear-gradient(
+    to right, #FFFFFF, #D0D0D0 30%, #A1A2A2 50%, #727473 70%, #434645 90%, #151817);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.notFoundExploreBtn{
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    font-style: normal;
+    width: fit-content;
+}
+
+.notFoundExploreBtn:active { transform: scale(0.9); }
+
+.lightTheme .notFoundExploreBtn{
+    color: #FFFFFF;
+    background-color: #171717;
+}
+
+.darkTheme .notFoundExploreBtn{
+    color: #171717;
+    background-color: #FDFDFD;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+} 

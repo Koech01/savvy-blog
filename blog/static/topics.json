@@ -1,0 +1,353 @@
+[
+    {
+        "name"  : "Art & Creativity",
+        "topics": [
+            "Painting Techniques",
+            "Sculpture & Pottery",
+            "Digital Art",
+            "Graphic Design",
+            "Murals",
+            "Street Art",
+            "Photography Tips",
+            "Art History"
+        ]
+    },
+    {
+        "name"  : "Technology & Innovation",
+        "topics": [
+            "Futuristic Technologies",
+            "Robotics & Automation",
+            "IoT",
+            "Virtual Reality",
+            "Augmented Reality",
+            "Green Tech",
+            "Renewable Energy"
+        ]
+    },
+    {
+        "name"  : "Science & Discovery",
+        "topics": [
+            "Space Exploration",
+            "Archaeology",
+            "Ancient Civilizations",
+            "Marine Biology",
+            "Oceanography",
+            "Neuroscience",
+            "Astronomy",
+            "Climate Change"
+        ]
+    },
+    {
+        "name"  : "Personal Development",
+        "topics": [
+            "Time Management",
+            "Goal Setting",
+            "Meditation",
+            "Confidence Building",
+            "Emotional Intelligence",
+            "Effective Communication Skills"
+        ]
+    },
+    {
+        "name"  : "Culinary Arts",
+        "topics": [
+            "International Cooking",
+            "Gourmet Desserts",
+            "Pastry Artistry",
+            "Cooking Adventures",
+            "Culinary Travel",
+            "Food Tours",
+            "Ethnic Food Fusion"
+        ]
+    },
+    {
+        "name"  : "Style & Fashion",
+        "topics": [
+            "Sustainable Fashion",
+            "Vintage & Retro Style",
+            "Celebrity Fashion",
+            "Fashion Accessories",
+            "Seasonal Wardrobe",
+            "Fashion Reviews"
+        ]
+    },
+    {
+        "name"  : "Global Travel",
+        "topics": [
+            "Adventure Travel Destinations",
+            "Cultural Experiences",
+            "Solo Travel Tips",
+            "Luxury Travel",
+            "Travel Photography",
+            "Travel Videography"
+        ]
+    },
+    {
+        "name"  : "Music & Performance",
+        "topics": [
+            "Music Production",
+            "Live Music Concerts",
+            "Music Festivals",
+            "Dance Styles & Choreography",
+            "Vocal Training",
+            "Music History"
+        ]
+    },
+    {
+        "name"  : "Gaming & Leisure",
+        "topics": [
+            "Board Games",
+            "Card Games",
+            "Retro Gaming",
+            "Game Streaming",
+            "Content Creation",
+            "E-Sports Championship",
+            "Gaming Hardware",
+            "Gaming Industry"
+        ]
+    },
+    {
+        "name"  : "Film & Television",
+        "topics": [
+            "Filmmaking Tips",
+            "Film Analysis",
+            "Independent Cinema",
+            "Television Show",
+            "Scriptwriting",
+            "Storytelling",
+            "Film Festival"
+        ]
+    },
+    {
+        "name"  : "Written Word",
+        "topics": [
+            "Creative Writing",
+            "Poetry",
+            "Book Recommendations",
+            "Journaling",
+            "Publishing Tips"
+        ]
+    },
+    {
+        "name"  : "Health & Wellness",
+        "topics": [
+            "Holistic Healing",
+            "Fitness Regimens",
+            "Workout Plans",
+            "Nutrition",
+            "Mental Resilience",
+            "Alternative Medicine",
+            "Stress Relief",
+            "Self Care Rituals"
+        ]
+    },
+    {
+        "name"  : "Business & Entrepreneurship",
+        "topics": [
+            "Tech Start-up",
+            "Business Strategy",
+            "E-Commerce",
+            "Dropshipping",
+            "Leadership & Management",
+            "Market Trends & Analysis",
+            "Social Entrepreneurship"
+        ]
+    },
+    {
+        "name"  : "Current Events & Trends",
+        "topics": [
+            "Global News",
+            "Social Discourse",
+            "Political Discourse",
+            "Cultural Shifts",
+            "Internet Virality",
+            "Technology Breakthroughs",
+            "Environmental Activism"
+        ]
+    },
+    {
+        "name"  : "Spirituality & Beliefs",
+        "topics": [
+            "Comparative Religion",
+            "Meditation Practices",
+            "Mythology & Folklore",
+            "Faith & Science",
+            "Spiritual Journeys",
+            "Spiritual Transformations",
+            "Mindful Living"
+        ]
+    },
+    {
+        "name"  : "Home & Lifestyle",
+        "topics": [
+            "Interior Design",
+            "DIY Home Improvement",
+            "Home Organization",
+            "Sustainable Living Hacks",
+            "Urban Gardening",
+            "Green Spaces",
+            "Home Tech Innovations"
+        ]
+    },
+    {
+        "name"  : "Nature & Environment",
+        "topics": [
+            "Wildlife Conservation",
+            "Eco-Tourism",
+            "Natural Wonders",
+            "Breathtaking Landscapes",
+            "Ocean Conservation",
+            "Climate Advocacy",
+            "Nature Photography"
+        ]
+    },
+    {
+        "name"  : "Automotive & Motorsports",
+        "topics": [
+            "Classic Car",
+            "Car Restoration",
+            "Formula One Racing",
+            "Electric Cars",
+            "Hybrid Vehicle Innovations",
+            "Off-Roading Adventures",
+            "Motorcycle Customization",
+            "Motorsports Photography"
+        ]
+    },
+    {
+        "name"  : "Cultural Exchange",
+        "topics": [
+            "Cultural Etiquette",
+            "Cultural Traditions",
+            "Language Learning",
+            "Immigrant Stories",
+            "Global Cuisine",
+            "Indigenous Culture",
+            "Cross-Cultural Collaborations"
+        ]
+    },
+    {
+        "name"  : "Mind & Thought",
+        "topics": [
+            "Philosophy Dialogues",
+            "Cognitive Psychology",
+            "Creative Thinking",
+            "Mindset Shifts",
+            "Personal Growth",
+            "Brain Teasers",
+            "Intellectual Discussions"
+        ]
+    },
+    {
+        "name"  : "Social Impact & Advocacy",
+        "topics": [
+            "Non-Profit Initiatives",
+            "Human Rights",
+            "Equality Efforts",
+            "Environmental Activism",
+            "Social Justice",
+            "Community Empowerment",
+            "Volunteering"
+        ]
+    },
+    {
+        "name"  : "Fitness & Exercise",
+        "topics": [
+            "Outdoor Workout",
+            "Fitness Equipment",
+            "Yoga",
+            "High Intensity Interval Training",
+            "Body Positivity",
+            "Bodybuilding",
+            "Marathon"
+        ]
+    },
+    {
+        "name"  : "Financial Insights",
+        "topics": [
+            "Investment Strategies",
+            "Personal Finance Management",
+            "Cryptocurrency",
+            "Retirement Planning",
+            "Wealth Building",
+            "Financial Literacy",
+            "Budgeting Techniques"
+        ]
+    },
+    {
+        "name"  : "Media & Entertainment",
+        "topics": [
+            "Celebrity Interviews",
+            "Entertainment Industry",
+            "Red Carpet",
+            "Fashion Events",
+            "Music Awards",
+            "Film Premiere",
+            "Behind the Scenes"
+        ]
+    },
+    {
+        "name"  : "Social Media & Online Communities",
+        "topics": [
+            "Social Media Marketing",
+            "Online Community",
+            "Influencer Spotlight",
+            "Memes",
+            "Internet Culture",
+            "Social Media Ethics",
+            "Viral Content"
+        ]
+    },
+    {
+        "name"  : "Exploration & Adventure",
+        "topics": [
+            "Travel Diaries",
+            "Survival Skills",
+            "Wilderness Tips",
+            "Mountain Climbing",
+            "Underwater Exploration",
+            "Sea Diving",
+            "Uncharted Territories",
+            "Adventure"
+        ]
+    },
+    {
+        "name"  : "Visual Arts & Design",
+        "topics": [
+            "Typography & Calligraphy",
+            "User Experience (UX)",
+            "Branding Design",
+            "Animation",
+            "Motion Graphics",
+            "Design Thinking"
+        ]
+    },
+    {
+        "name"  : "Innovations in Science & Technology",
+        "topics": [
+            "Breakthroughs in Medical Research",
+            "Nanotechnology",
+            "Quantum Computing",
+            "A.I. Ethics",
+            "Biometric Security",
+            "Emerging Technology"
+        ]
+    },
+    {
+        "name"  : "Wilderness & Survival",
+        "topics": [
+            "Bushcraft Skills",
+            "Survival Gear",
+            "Edible Wild Plants",
+            "Animal Tracking",
+            "Remote Area Expeditions",
+            "Homesteading"
+        ]
+    },
+    {
+        "name"  : "Psychology & Relationships",
+        "topics": [
+            "Relationship Dynamics & Communication"
+        ]
+    }
+]

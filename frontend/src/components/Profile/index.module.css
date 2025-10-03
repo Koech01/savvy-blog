@@ -1,0 +1,540 @@
+/* Smartphones and small tablets in portrait mode */
+@media screen and (max-width: 767px){
+
+    .profileContainer {
+        flex: 1;
+        padding: 0px;
+        border: none;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .profileParent {
+        padding: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profileParentDiv {
+        width: 90%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px 0px 10px 0px; 
+    }
+ 
+    .profilePageTitle { 
+        display: flex;
+        width: 90%;
+        margin: 20px 0px 10px 0px;
+        justify-content: flex-start;
+    }
+
+    .profileHeaderDiv{ width: 90%; }
+
+    .profileHeaderChildDiv{
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        margin: 0px 0px 0px 20px;
+    }
+
+    .userEditMode{ flex-direction: column; }
+
+    .displayMode{
+        gap: 15px;
+        align-items: center;
+    }
+
+    .profileUsername{
+        display: flex;
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .profilePicture{
+        width: 80px;
+        height: 80px;
+    }
+
+    .profileEditBtn{ margin: 0px; }
+
+    .profileChangeIconBtn{ 
+        width: fit-content;
+        margin: 10px 0px 10px 0px; 
+    }
+
+    .profileChildDiv{
+        display: flex;
+        width: 95%;
+        border: none;
+        align-items: center;
+        flex-direction: column;
+        margin: 20px 0px 0px 0px;
+        padding: 15px 0px 15px 0px;
+    }
+
+    .profileEmailAndNoDiv { margin: 10px 0px 0px 0px; }
+
+    .profileNamesDiv, .profileEmailAndNoDiv { 
+        gap: 10px;
+        width: 100%;
+        border: none;
+        flex-direction: column;
+    }
+
+    .profileFNameDiv, .profileLNameDiv, .profileEmailDiv, .profileNoDiv {
+        display: flex;
+        width: 90%; 
+        border: none;
+        border-radius: 5px;
+        align-items: center;
+        justify-content: center;      
+        padding: 10px 15px 10px 15px;
+    }
+
+    .lightTheme .profileFNameDiv, 
+    .lightTheme .profileLNameDiv, 
+    .lightTheme .profileEmailDiv, 
+    .lightTheme .profileNoDiv { background-color: #F8FAFC; }
+
+    .darkTheme .profileFNameDiv,
+    .darkTheme .profileLNameDiv,
+    .darkTheme .profileEmailDiv,
+    .darkTheme .profileNoDiv { background-color: #121514; }
+
+    .profileFNameDiv > div, .profileLNameDiv> div, .profileEmailDiv> div, .profileNoDiv > div{
+        display: flex;
+        flex: 1;
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        flex-direction: row-reverse;
+    }
+
+    .profileEmptyField, .profileValueText{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .profileIconNote{
+        display: flex;
+        margin: 15px 0px 0px 20px;
+    }
+
+    .profileEditNamesDiv, .profileEditEmailPhoneDiv { 
+        width: 90%;
+        flex-direction: column; 
+    }
+
+    .profileEditEmailPhoneDiv div, .profileEditNamesDiv div { margin: 0px 0px 20px 0px; }
+
+    .profileSubmitBtnDiv{ 
+        display: flex;
+        width: 90%;
+        margin: 0px; 
+    }
+    
+    .profileSubmitBtn{ width: fit-content;  }
+
+}
+
+
+/* Smartphones and small tablets in landscape mode */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .profileParent { padding: 50px 0px 0px 30px; }
+
+    .profileParentDiv {
+        width: 85%;
+        border-radius: 10px;
+        flex-direction: column;
+        padding: 10px 20px 0px 20px; 
+    }
+
+    .profilePageTitle { margin: 10px 0px 0px 0px; }
+
+    .profilePicture{
+        width: 55px;
+        height: 55px;
+    }
+
+    .profileHeaderSubDiv{ margin: 0px 0px 0px 20px; }
+
+    .profileHeaderChildDiv{ align-items: center; }
+
+    .userEditMode, .displayMode{ display: none; }
+
+    .profileUsername { margin: 0px; }
+
+    .profileEditBtn{ margin: 0px 0px 0px 15px; }
+
+    .profileChangeIconBtn{ margin: 0px 15px 0px 0px; }
+
+    .profileChildDiv{
+        display: flex;
+        padding: 0px;
+        flex-direction: column;
+        margin: 20px 0px 0px 0px; 
+    }
+
+    .profileNamesDiv, .profileEmailAndNoDiv { 
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .profileFNameDiv, .profileLNameDiv, .profileEmailDiv, .profileNoDiv {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin: 0px 0px 20px 0px; 
+    }
+    
+    .profileEmptyField, .profileValueText{
+        padding: 0px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .profileEditEmailPhoneDiv { margin: 20px 0px 0px 0px; }
+
+    .profileEditEmailPhoneDiv div, .profileEditNamesDiv div { width: 47%; }
+
+    .profileEditEmailPhoneDiv div:nth-child(2), .profileEditNamesDiv div:nth-child(2) { margin: 0px 0px 0px 30px; }
+
+    .profileSubmitBtnDiv{ margin: 20px 0px 0px 0px; }
+    
+    .profileSubmitBtn{ width: fit-content;  }
+
+}
+
+
+/* Tablets and larger screens */
+@media screen and (min-width: 1024px) {
+
+    .profileParent { padding: 50px 0px 0px 30px; }
+
+    .profileParentDiv {
+        width: 70%;
+        border-radius: 10px;
+        flex-direction: column;
+        padding: 10px 20px 20px 20px; 
+    }
+
+    .profilePageTitle, .profileUdpatedMsg { margin: 10px 0px 0px 0px; }
+
+    .profilePicture{
+        width: 55px;
+        height: 55px;
+    }
+
+    .profileHeaderSubDiv{ margin: 0px 0px 0px 20px;  }
+
+    .profileHeaderChildDiv{ align-items: center;  }
+    
+    .userEditMode, .displayMode{ display: none; }
+
+    .profileUsername { margin: 0px; }
+
+    .profileEditBtn{ margin: 0px 0px 0px 20px; }
+
+    .profileChangeIconBtn{ margin: 0px 15px 0px 0px; }
+
+    .profileChildDiv{
+        display: flex;
+        padding: 0px;
+        flex-direction: column;
+        margin: 20px 0px 0px 0px; 
+    }
+
+    .profileEmailAndNoDiv { margin: 20px 0px 0px 0px; }
+
+    .profileFNameDiv, .profileLNameDiv, .profileEmailDiv, .profileNoDiv { 
+        display: flex;
+        width: 50%; 
+        flex-direction: column;
+    }
+    
+    .profileEmptyField, .profileValueText{
+        padding: 0px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .profileEditNamesDiv, .profileEditEmailPhoneDiv { width: 100%;  }
+      
+    .profileEditEmailPhoneDiv { margin: 20px 0px 0px 0px; }
+
+    .profileEditEmailPhoneDiv div, .profileEditNamesDiv div { width: 40%; }
+
+    .profileEditEmailPhoneDiv div:nth-child(2), .profileEditNamesDiv div:nth-child(2) { margin: 0px 0px 0px 30px;  }
+
+    .profileSubmitBtnDiv{ margin: 20px 0px 0px 0px; }
+
+    .profileSubmitBtn{ width: fit-content;  }
+    
+}
+
+
+.profileParent {
+    display: flex;
+    height: 100%; 
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+.profileParentDiv {
+    display: flex;
+    margin: 0px;
+    height: fit-content;
+}
+
+.profilePageTitle {
+    padding: 0px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 17px;
+    font-style: normal;
+}
+
+.lightTheme .profilePageTitle { color: #171717; }
+.darkTheme  .profilePageTitle { color: #FDFDFD; }
+
+.profileUdpatedDiv {
+    display: flex;
+    margin: 0px;
+    border-radius: 6px;
+    width: fit-content;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 0px 6px 8px;
+}
+
+.lightTheme .profileUdpatedDiv { background-color: #EAFCEF; }
+.darkTheme .profileUdpatedDiv { background-color: #0C0E0D; }
+
+.profileUdpatedDiv > img{
+    margin: 0px;
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.profileUdpatedDiv > p{
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-style: normal;
+    margin: 0px 20px 2px 6px;
+}
+
+.lightTheme .profileUdpatedDiv > p{ color: #212121; }
+.darkTheme  .profileUdpatedDiv > p{ color: #69F0AE; }
+
+.profilePicture{
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profileHeaderDiv{
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.profileHeaderSubDiv{
+    display: flex;
+    padding: 0px;
+    align-items: center;
+}
+
+.profileHeaderChildDiv{
+    display: flex;
+    padding: 0px;
+}
+
+.profileUsername {
+    padding: 0px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: normal;
+    font-style: normal;
+}
+
+.lightTheme .profileUsername { color: #171717; }
+.darkTheme .profileUsername { color: #FDFDFD; }
+
+.profileEditBtn, .profileChangeIconBtn, .profileSubmitBtn{
+    display: inline-block;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 13.8px;
+    font-weight: 400;
+    border-radius: 4px;
+    font-style: normal;
+    line-height: 13.8px;
+    height: fit-content;
+    padding: 8px 20px 8px 20px;
+}
+
+.lightTheme .profileEditBtn,
+.lightTheme .profileChangeIconBtn,
+.lightTheme .profileSubmitBtn{
+    color: #FFFFFF;
+    background-color: #171717;
+}
+
+.darkTheme .profileEditBtn,
+.darkTheme .profileChangeIconBtn,
+.darkTheme .profileSubmitBtn{
+    color: #151817;
+    background-color: #FDFDFD; 
+}
+
+.profileEditBtn:active, .profileChangeIconBtn:active, .profileSubmitBtn:active { transform: scale(0.9); }
+
+.profileIconNote {
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-style: normal;
+}
+
+.lightTheme .profileIconNote { color: #37474F; }
+.darkTheme .profileIconNote { color: #707578; }
+
+.profileInputDiv { position: relative; }
+
+.profileInput {
+    width: 100%;
+    margin: 0px;
+    border-radius: 6px;
+    box-sizing: border-box; 
+}
+
+.lightTheme .profileInput{
+    font-size: 14.5px;
+    color: #171717;
+    padding: 9px 20px;
+    border: 1px solid #E0E0E0;
+}
+
+.darkTheme .profileInput{
+    border: none;
+    font-size: 14.5px;
+    color: #FDFDFD;
+    padding: 9px 20px;
+    background-color: #101312;
+}
+
+.profileInput:hover { border-radius: 6px 6px 0px 0px; }
+
+.lightTheme .profileInput:hover { background-color: #FAFAFA; }
+.darkTheme .profileInput:hover { background-color: #101312; }
+
+.profileInput:focus { outline: none; }
+
+.lightTheme .profileInput::placeholder { color: #9E9E9E; }
+.darkTheme .profileInput::placeholder { color: #707578; }
+
+.profileInputBorder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease;
+}
+
+.lightTheme .profileInputBorder { background-color: #000000; }
+.darkTheme .profileInputBorder { background-color: #FDFDFD; }
+
+
+.profileInput:focus + .profileInputBorder { width: 100%; }
+
+.profileInput:focus { animation: profileInput-focus 0.3s ease; }
+
+.profileNamesDiv, .profileEmailAndNoDiv { 
+    display: flex;
+    padding: 0px;
+}
+
+.profileHeaderText, .profileEmptyField, .profileValueText{
+    padding: 0px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    font-style: normal;
+}
+
+.profileHeaderText{
+    margin: 0px;
+    padding: 0px; 
+}
+
+.lightTheme .profileHeaderText { color: #666666; }
+.darkTheme .profileHeaderText { color: #626669; }
+
+.lightTheme .profileEmptyField { color: #9E9E9E; }
+.darkTheme .profileEmptyField { color: #8D9396; }
+
+.lightTheme .profileValueText { color: #171717; }
+.darkTheme .profileValueText { color: #FDFDFD; }
+
+.profileEditNamesDiv, .profileEditEmailPhoneDiv { 
+    display: flex;
+    padding: 0px;
+}
+
+@keyframes rubberBand {
+    from { transform: scale3d(1, 1, 1); }
+  
+    30%  { transform: scale3d(1.25, 0.75, 1); }
+  
+    40%  { transform: scale3d(0.75, 1.25, 1); }
+  
+    50%  { transform: scale3d(1.15, 0.85, 1); }
+  
+    65%  { transform: scale3d(0.95, 1.05, 1); }
+  
+    75%  { transform: scale3d(1.05, 0.95, 1); }
+  
+    to   { transform: scale3d(1, 1, 1); }
+}
+  
+.rubberBand {
+    animation-duration: 1s;
+    animation-name: rubberBand;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+
+@keyframes shakeX {
+    from,to { transform: translate3d(0, 0, 0); }
+  
+    10%,30%,50%,70%,90% { transform: translate3d(-10px, 0, 0); }
+  
+    20%, 40%, 60%, 80% { transform: translate3d(10px, 0, 0); }
+}
+  
+.shakeX { 
+    animation-duration: 1s;
+    animation-name: shakeX;
+    border: 2px solid #E53935 !important;
+} 
